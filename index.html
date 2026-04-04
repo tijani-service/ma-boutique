@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
+<html lang="fr"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>La Boutique</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Jost:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 :root{
@@ -203,7 +201,7 @@ code{background:var(--bg2);padding:1px 5px;border-radius:3px;font-size:11px;}
 <body>
 
 <!-- LOGIN SCREEN -->
-<div id="login-screen">
+<div id="login-screen" style="display: none;">
   <div class="login-box">
     <div class="login-logo" id="ls-logo">La Boutique</div>
     <div class="login-sub" id="ls-sub">PARIS · CASABLANCA</div>
@@ -227,7 +225,7 @@ code{background:var(--bg2);padding:1px 5px;border-radius:3px;font-size:11px;}
       <div class="logo-name" id="h-name">La Boutique</div>
       <div class="logo-tag" id="h-tag">Paris · Casablanca</div>
     </div>
-    <div class="header-nav" id="main-nav"></div>
+    <div class="header-nav" id="main-nav"><button class="hnav" data-panel="shop">Catalogue</button><button class="hnav" data-panel="admin">Gérer</button><button class="hnav" data-panel="orders" id="orders-nav-btn">Commandes</button><button class="hnav" data-panel="setup">☁️ Config</button><button class="hnav hnav-gold active" data-panel="export">↓ Publier</button><button class="hnav hnav-red" id="logout-btn">⎋ Déconnexion</button></div>
   </div>
 </div>
 
@@ -250,7 +248,7 @@ code{background:var(--bg2);padding:1px 5px;border-radius:3px;font-size:11px;}
       <div class="field"><label>Votre numéro WhatsApp</label><input type="tel" id="o-phone" placeholder="+212 6XX XXX XXX"></div>
       <div class="field"><label>Taille / Couleur / Quantité</label><textarea id="o-note" rows="2" placeholder="Précisions..."></textarea></div>
       <button class="btn-wa" id="place-order-btn">
-        <svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
         Commander via WhatsApp
       </button>
     </div>
@@ -286,17 +284,17 @@ code{background:var(--bg2);padding:1px 5px;border-radius:3px;font-size:11px;}
 </div>
 
 <!-- PANEL: SHOP -->
-<div class="panel active" id="panel-shop">
+<div class="panel" id="panel-shop">
   <div class="hero">
     <h1>Produits <span class="hero-gold">Authentiques</span><br>de France</h1>
     <p>SÉLECTION PREMIUM &nbsp;·&nbsp; PRIX EXCLUSIFS &nbsp;·&nbsp; LIVRAISON MAROC</p>
   </div>
-  <div class="cat-scroll" id="cat-scroll"></div>
+  <div class="cat-scroll" id="cat-scroll"><div class="cat-tab active" data-cat="all">✨ Tout <span class="cat-cnt">3</span></div><div class="cat-tab" data-cat="c1">👜 Sacs de Luxe <span class="cat-cnt">1</span></div><div class="cat-tab" data-cat="c2">🧴 Skincare <span class="cat-cnt">1</span></div><div class="cat-tab" data-cat="c3">💄 Parfums &amp; Beauté <span class="cat-cnt">1</span></div><div class="cat-tab" data-cat="c4">👗 Prêt-à-porter <span class="cat-cnt">0</span></div></div>
   <div class="sec-header">
     <div class="sec-title" id="sec-title">Toute la collection</div>
-    <div class="sec-count" id="sec-count"></div>
+    <div class="sec-count" id="sec-count">3 pièces</div>
   </div>
-  <div class="pgrid" id="pgrid"></div>
+  <div class="pgrid" id="pgrid"><div class="pcard" data-pid="p1"><div class="pcard-img-wrap"><div class="pcard-emoji">👜</div><div class="pcard-badge">-33%</div><div class="pcard-catbadge">👜 Sacs de Luxe</div></div><div class="pcard-body"><div class="pcard-name">Sac Celine Bucket</div><div class="pcard-prices"><span class="price-old">4,800 MAD</span><span class="price-new">3,200 MAD</span></div><button class="pcard-cta" data-pid="p1">Commander</button></div></div><div class="pcard" data-pid="p2"><div class="pcard-img-wrap"><div class="pcard-emoji">🧴</div><div class="pcard-badge">-35%</div><div class="pcard-catbadge">🧴 Skincare</div></div><div class="pcard-body"><div class="pcard-name">Sérum Vitamin C La Roche-Posay</div><div class="pcard-prices"><span class="price-old">520 MAD</span><span class="price-new">340 MAD</span></div><button class="pcard-cta" data-pid="p2">Commander</button></div></div><div class="pcard" data-pid="p3"><div class="pcard-img-wrap"><div class="pcard-emoji">💄</div><div class="pcard-badge">-31%</div><div class="pcard-catbadge">💄 Parfums &amp; Beauté</div></div><div class="pcard-body"><div class="pcard-name">Parfum Dior Miss Dior</div><div class="pcard-prices"><span class="price-old">1,600 MAD</span><span class="price-new">1,100 MAD</span></div><button class="pcard-cta" data-pid="p3">Commander</button></div></div></div>
 </div>
 
 <!-- PANEL: ADMIN -->
@@ -353,7 +351,7 @@ code{background:var(--bg2);padding:1px 5px;border-radius:3px;font-size:11px;}
 
 <!-- PANEL: ORDERS -->
 <div class="panel" id="panel-orders">
-  <div class="stat-strip" id="stat-strip"></div>
+  <div class="stat-strip" id="stat-strip"><div class="stat-box"><div class="stat-val">0</div><div class="stat-lbl">Commandes</div></div><div class="stat-box"><div class="stat-val" style="color:var(--red);">0</div><div class="stat-lbl">En attente</div></div><div class="stat-box"><div class="stat-val">0</div><div class="stat-lbl">MAD · C.A.</div></div></div>
   <div class="filter-row">
     <button class="fbtn active" data-filter="all">Toutes</button>
     <button class="fbtn" data-filter="pending">En attente</button>
@@ -361,11 +359,11 @@ code{background:var(--bg2);padding:1px 5px;border-radius:3px;font-size:11px;}
     <button class="fbtn" data-filter="shipped">Expédiées</button>
     <button class="fbtn" data-filter="delivered">Livrées</button>
   </div>
-  <div id="orders-list"></div>
+  <div id="orders-list"><div style="background:#FFF7ED;border:1px solid #FED7AA;border-radius:var(--r3);padding:18px;font-size:13px;color:#C2410C;">⚠️ <strong>JSONBin non configuré.</strong> Les commandes ne sont pas encore sauvegardées sur le cloud.<br><br><button class="btn-p" id="goto-setup-btn" style="font-size:11px;">→ Configurer maintenant</button></div></div>
 </div>
 
 <!-- PANEL: PUBLISH -->
-<div class="panel" id="panel-export">
+<div class="panel active" id="panel-export">
   <div style="max-width:620px;">
     <div style="background:var(--ink);color:#fff;border-radius:var(--r3);padding:24px 26px;margin-bottom:16px;position:relative;overflow:hidden;">
       <div style="position:absolute;right:-20px;top:-20px;width:110px;height:110px;border:28px solid rgba(184,152,106,.15);border-radius:50%;"></div>
@@ -378,7 +376,7 @@ code{background:var(--bg2);padding:1px 5px;border-radius:3px;font-size:11px;}
     <div class="pub-step"><div class="pub-num" style="background:var(--green);">3</div><div><div class="pub-step-title">Upload sur GitHub</div><div class="pub-step-body">GitHub → ton repo → <code>index.html</code> → ✏️ → sélectionne tout → colle → Commit changes.<br><span style="color:var(--gold);">⚡ Tes clients voient les changements en moins d'une minute.</span></div></div></div>
     <div style="background:var(--white);border:2px solid var(--gold);border-radius:var(--r3);padding:20px 22px;text-align:center;margin-top:14px;">
       <div style="font-family:'Cormorant Garamond',serif;font-size:17px;margin-bottom:5px;">Prêt à publier ?</div>
-      <div style="font-size:12px;color:var(--ink3);margin-bottom:14px;" id="export-info">–</div>
+      <div style="font-size:12px;color:var(--ink3);margin-bottom:14px;" id="export-info">3 produit(s) · 4 catégorie(s) · La Boutique</div>
       <button class="btn-p" id="export-btn" style="padding:13px 28px;font-size:12px;">↓ Générer &amp; Télécharger index.html</button>
     </div>
   </div>
@@ -401,14 +399,14 @@ code{background:var(--bg2);padding:1px 5px;border-radius:3px;font-size:11px;}
       <div class="aform-full"><label>Master Key</label><input type="text" id="jb-key" placeholder="$2b$10$..."></div>
       <div style="display:flex;align-items:center;">
         <button class="btn-p" id="save-jb-btn">Enregistrer et tester</button>
-        <span class="ok-msg" id="jb-ok">Connexion réussie ✓</span>
+        <span class="ok-msg" id="jb-ok" style="display: none;">Connexion réussie ✓</span>
       </div>
-      <div style="font-size:11px;color:var(--red);margin-top:8px;display:none;" id="jb-err">Erreur — vérifie les identifiants.</div>
+      <div style="font-size: 11px; color: var(--red); margin-top: 8px; display: none;" id="jb-err">Erreur — vérifie les identifiants.</div>
       <div class="warn-box" style="margin-top:14px;">⚠️ Ne partage jamais ta Master Key. Elle est sauvegardée uniquement dans ton navigateur.</div>
     </div>
     <div class="setup-box">
       <div class="setup-title">Statut</div>
-      <div id="jb-status" style="font-size:13px;color:var(--ink3);">Non configuré</div>
+      <div id="jb-status" style="font-size:13px;color:var(--ink3);"><span style="color:var(--green);">✓ Configuré</span> — Bin ID : <code>69d0bb3c...</code></div>
     </div>
   </div>
 </div>
@@ -418,9 +416,11 @@ code{background:var(--bg2);padding:1px 5px;border-radius:3px;font-size:11px;}
 'use strict';
 
 // ── STATE ──
-var P = [], C = [], O = [];
-var conf = { name: 'La Boutique', tag: 'Paris · Casablanca', wa: '+212600000000', pw: 'admin1234' };
-var JB = { binId: '', key: '' };
+var P = [{"id":"p1","catId":"c1","name":"Sac Celine Bucket","desc":"Cuir véritable, neuf avec étiquette, coloris camel","oldPrice":4800,"newPrice":3200,"img":null,"emoji":"👜"},{"id":"p2","catId":"c2","name":"Sérum Vitamin C La Roche-Posay","desc":"Pure Vitamin C10, 30ml, authentique France","oldPrice":520,"newPrice":340,"img":null,"emoji":"🧴"},{"id":"p3","catId":"c3","name":"Parfum Dior Miss Dior","desc":"EDP 100ml, version France, neuf sous cellophane","oldPrice":1600,"newPrice":1100,"img":null,"emoji":"💄"}];
+var C = [{"id":"c1","icon":"👜","name":"Sacs de Luxe"},{"id":"c2","icon":"🧴","name":"Skincare"},{"id":"c3","icon":"💄","name":"Parfums & Beauté"},{"id":"c4","icon":"👗","name":"Prêt-à-porter"}];
+var O = [];
+var conf = {"name":"La Boutique","tag":"Paris · Casablanca","wa":"+212600000000","pw":"admin1234"};
+var JB = {"binId":"69d0bb3c856a682189fabbba","key":"$2a$10$paL6TMSvM5ojKizj16VowOI4KjGPe7FkgDAIUScutYkFCsmXS1iyW"};
 var isAdmin = false;
 var activeCat = 'all';
 var oFilter = 'all';
@@ -1001,5 +1001,6 @@ bindStaticButtons();
 
 })();
 </script>
-</body>
-</html>
+
+
+</body></html>
