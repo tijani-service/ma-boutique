@@ -486,7 +486,7 @@ function boot(){
 
   if(ps)P=JSON.parse(ps);
   if(cs)C=JSON.parse(cs);
-  if(cf)conf=JSON.parse(cf);
+  if(cf){var saved=JSON.parse(cf);conf=Object.assign(conf,saved);if(!conf.pw)conf.pw='admin1234';}
   if(jb)JB=JSON.parse(jb);
 
   if(!C.length)C=[
